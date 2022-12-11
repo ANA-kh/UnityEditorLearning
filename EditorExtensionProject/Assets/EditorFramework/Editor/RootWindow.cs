@@ -21,14 +21,9 @@ namespace EditorFramework
 
         private void OnEnable()
         {
-            var editorWindowType = typeof(EditorWindow);
             //var m_Parent = editorWindowType.GetField("m_Parent", BindingFlags.NonPublic | BindingFlags.Instance);
-
-            _editorWindowTypes = AppDomain.CurrentDomain.GetAssemblies()
-                .SelectMany(assembly => assembly.GetTypes())
-                .Where(type => type.IsSubclassOf(editorWindowType));
-            _customEditorWindowTypes = _editorWindowTypes.Where(type =>
-                type.GetCustomAttribute(typeof(CustomEditorWindowAttribute), true) != null);
+            _editorWindowTypes = typeof(EditorWindow).GetSubTypesInAssemblies();
+            _customEditorWindowTypes = typeof(EditorWindow).GetSubTypesWithClassAttributeInAssemblies<CustomEditorWindowAttribute>();
         }
 
         private void OnGUI()
@@ -45,6 +40,7 @@ namespace EditorFramework
                 }
                 GUILayout.EndHorizontal();
             }
+
             GUILayout.Box("", GUILayout.ExpandWidth(true), GUILayout.Height(5));
             _scrollPosition = GUILayout.BeginScrollView(_scrollPosition);
             foreach (var editorWindowType in _editorWindowTypes)
@@ -59,6 +55,7 @@ namespace EditorFramework
                 }
                 GUILayout.EndHorizontal();
             }
+
             GUILayout.EndScrollView();
         }
     }
