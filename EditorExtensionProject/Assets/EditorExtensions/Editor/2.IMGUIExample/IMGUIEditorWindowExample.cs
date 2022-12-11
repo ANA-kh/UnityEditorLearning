@@ -18,10 +18,12 @@ namespace EditorExtensions
         {
             GUILayout,
             GUI,
+            EditorGUI,
+            EditorGUILayout
         }
         enum PageID
         {
-            GUILayoutAPI,
+            IMGUIAPIExample,
             GUI_Enable_Color,
             GUIUtility,
             other
@@ -31,19 +33,17 @@ namespace EditorExtensions
         private PageID _curPageID;
         private readonly GUILayoutAPI _guiLayoutAPI = new GUILayoutAPI();
         private readonly GUIAPI _guiAPI = new GUIAPI();
+        private readonly EditorGUIAPI _editorGUIExample = new EditorGUIAPI();
+        private readonly EditorGUILayoutAPI _editorGUILayoutExample = new EditorGUILayoutAPI();
 
         private void OnGUI()
         {
             _curAPIModeID = (APIMode)GUILayout.Toolbar((int)_curAPIModeID, Enum.GetNames(typeof(APIMode)));
             _curPageID = (PageID)GUILayout.Toolbar((int)_curPageID, Enum.GetNames(typeof(PageID)));
-            if (_curPageID == PageID.GUILayoutAPI)
-            {
-                Basic();
-            }
 
             switch (_curPageID)
             {
-                case PageID.GUILayoutAPI:
+                case PageID.IMGUIAPIExample:
                     Basic();
                     break;
                 case PageID.GUI_Enable_Color:
@@ -65,9 +65,17 @@ namespace EditorExtensions
             {
                 _guiAPI.Draw();
             }
-            else
+            else if (_curAPIModeID == APIMode.GUILayout)
             {
                 _guiLayoutAPI.Draw();
+            }
+            else if (_curAPIModeID == APIMode.EditorGUI)
+            {
+                _editorGUIExample.Draw();
+            }
+            else if (_curAPIModeID == APIMode.EditorGUILayout)
+            {
+                _editorGUILayoutExample.Draw();
             }
         }
 

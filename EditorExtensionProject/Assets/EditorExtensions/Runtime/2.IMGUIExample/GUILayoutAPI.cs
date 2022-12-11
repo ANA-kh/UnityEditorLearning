@@ -68,7 +68,10 @@ namespace EditorExtensions
                     GUILayout.BeginHorizontal();
                     {
                         GUILayout.Label("RepeatButton");
-                        if (GUILayout.RepeatButton("RepeatButton")) //按下抬起都触发
+                        if (GUILayout.RepeatButton("RepeatButton")) //按下抬起都触发(editor模式); 按下持续触发(运行模式)
+                        {
+                            Debug.Log("RepeatButton");
+                        }  
                         {
                             Debug.Log("RepeatButton");
                         }
