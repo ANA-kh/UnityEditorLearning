@@ -74,10 +74,8 @@ namespace EditorExtensions
         {
             return _OpenShotCut;
         }
-
-        //每次编译完成会调用;
-        //如果是非静态方法，则不会调用
-        //推测：非静态构造函数在创建实例时调用；静态构造函数在创建第一个实例或引用任何静态成员之前自动调用
+        
+        //非静态构造函数在创建实例时调用；静态构造函数在创建第一个实例或引用任何静态成员之前自动调用
         static MenuItemExample()
         {
             Menu.SetChecked("EditorExtensions/01.Menu/05.快捷键开关", _OpenShotCut);
