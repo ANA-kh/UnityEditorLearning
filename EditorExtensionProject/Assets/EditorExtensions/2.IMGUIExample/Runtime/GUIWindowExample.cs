@@ -1,9 +1,8 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace EditorExtensions
 {
-    public class ExampleClass : MonoBehaviour
+    public class GUIWindowExample : MonoBehaviour
     {
         public Rect windowRect = new Rect(20, 20, 120, 50);
 
