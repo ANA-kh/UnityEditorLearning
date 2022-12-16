@@ -5,8 +5,8 @@ namespace EditorFramework
 {
     public abstract class GUIBase : IDisposable
     {
-        public bool Disposed { get; private set; }
-        public Rect Position { get; private set; }
+        protected bool Disposed { get; set; }
+        protected Rect Position { get; set; }
 
         public virtual void OnGUI(Rect position)
         {

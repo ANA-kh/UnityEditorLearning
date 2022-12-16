@@ -23,7 +23,9 @@ namespace EditorFramework
         {
             //var m_Parent = editorWindowType.GetField("m_Parent", BindingFlags.NonPublic | BindingFlags.Instance);
             _editorWindowTypes = typeof(EditorWindow).GetSubTypesInAssemblies();
-            _customEditorWindowTypes = typeof(EditorWindow).GetSubTypesWithClassAttributeInAssemblies<CustomEditorWindowAttribute>();
+            _customEditorWindowTypes = typeof(EditorWindow)
+                    .GetSubTypesWithClassAttributeInAssemblies<CustomEditorWindowAttribute>()
+                    .OrderBy(type => type.GetCustomAttribute<CustomEditorWindowAttribute>().RenderOrder);
         }
 
         private void OnGUI()
