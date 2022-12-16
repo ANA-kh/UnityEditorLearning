@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace EditorFramework
 {
-    [CustomEditorWindow]
+    [CustomEditorWindow(2)]
     public class GUIBaseExample: EditorWindow
     {
         public class Label : GUIBase

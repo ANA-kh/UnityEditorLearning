@@ -6,7 +6,10 @@ using UnityEngine;
 
 namespace EditorFramework
 {
-    [CustomEditorWindow]
+    /// <summary>
+    /// Type反射操作例子
+    /// </summary>
+    [CustomEditorWindow(3)]
     public class TypeExExample : EditorWindow
     {
         private IEnumerable<Type> _exampleTypes;

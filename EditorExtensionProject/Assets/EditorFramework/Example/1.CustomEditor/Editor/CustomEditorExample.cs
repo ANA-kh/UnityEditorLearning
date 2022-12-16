@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace EditorFramework
 {
-    [CustomEditorWindow]
+    [CustomEditorWindow(1)]
     public class CustomEditorExample: EditorWindow
     {
         private void OnGUI()
