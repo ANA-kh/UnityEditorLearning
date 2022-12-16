@@ -27,7 +27,6 @@ namespace EditorExtensions
             }
 
             _treeView = new SimpleTreeView(_treeViewState);
-            _treeView.Reload();
             _searchField = new SearchField();
             _searchField.downOrUpArrowKeyPressed += _treeView.SetFocusAndEnsureSelectedItem;
         }
@@ -46,7 +45,10 @@ namespace EditorExtensions
 
         public class SimpleTreeView : TreeView
         {
-            public SimpleTreeView(TreeViewState state) : base(state) { }
+            public SimpleTreeView(TreeViewState state) : base(state)
+            {
+                Reload();
+            }
 
             public SimpleTreeView(TreeViewState state, MultiColumnHeader multiColumnHeader) : base(state,
                 multiColumnHeader) { }
