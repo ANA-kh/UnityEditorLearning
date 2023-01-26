@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b800a9a0549a42eb8ffd4a400da4ff9, type: 3}
+  m_Name: New Dialogue Data
+  m_EditorClassIdentifier: 
+  Nodes:
+  - Type: 0
+    Avatar: {fileID: 0}
+    Sentence: "\u5728\u4E00\u4E2A\u5BC2\u9759\u7684\u9ED1\u591C\uFF0C\u5C0F\u7EA2\u5E3D\u8D70\u5728\u9634\u68EE\u7684\u6811\u6797\u91CC\u3002"
+    OptionTitle: 
+    Options: []
+    EventName: 
+    EventArgs: []
+  - Type: 0
+    Avatar: {fileID: 0}
+    Sentence: "\u7A81\u7136\u524D\u8FB9\u95EA\u8FC7\u4E00\u4E2A\u9ED1\u5F71\u3002"
+    OptionTitle: 
+    Options: []
+    EventName: 
+    EventArgs: []
+  - Type: 0
+    Avatar: {fileID: 0}
+    Sentence: "\u5C0F\u7EA2\u5E3D\u88AB\u9ED1\u5F71\u5413\u5F97\u5927\u53EB\u4E00\u58F0\u3002"
+    OptionTitle: 
+    Options: []
+    EventName: 
+    EventArgs: []
+  - Type: 1
+    Avatar: {fileID: 21300000, guid: f3ae2b42a642e4886b100de56a713096, type: 3}
+    Sentence: "\u5367\u5C3C\u739B\uFF01"
+    OptionTitle: 
+    Options: []
+    EventName: 
+    EventArgs: []
+  - Type: 2
+    Avatar: {fileID: 0}
+    Sentence: 
+    OptionTitle: "\u6B64\u65F6\u4F60\u6253\u7B97\u600E\u4E48\u505A?"
+    Options:
+    - Title: "\u7EE7\u7EED\u524D\u8FDB"
+      Data: {fileID: 0}
+    - Title: "\u4ECE\u5934\u5F00\u59CB"
+      Data: {fileID: 11400000}
+    EventName: 
+    EventArgs: []
+  - Type: 0
+    Avatar: {fileID: 0}
+    Sentence: "\u901A\u5173\u4E86"
+    OptionTitle: 
+    Options: []
+    EventName: 
+    EventArgs: []
+  - Type: 3
+    Avatar: {fileID: 0}
+    Sentence: 
+    OptionTitle: 
+    Options: []
+    EventName: GamePass
+    EventArgs:
+    - Key: Count
+      Value: 10000
